@@ -7,14 +7,11 @@ import { Image } from "expo-image";
 export default function RecuperarSenhaScreen() {
   const [email, setEmail] = useState("");
 
-  // Criar a função de recuperar senha
-  // fonte: https://firebase.google.com/docs/auth/web/email-link-auth?hl=pt-br
-
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
         <Image
-          source={require("../../assets/icon.png")}
+          source={require("../../assets/app_financas.jpg")}
           style={{ width: 200, height: 200, alignSelf: "center" }}
         />
         <Text variant="headlineLarge" style={styles.selfCenter}>

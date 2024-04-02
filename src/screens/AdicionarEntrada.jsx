@@ -4,7 +4,7 @@ import { Appbar, Button, TextInput as TextInputNP } from "react-native-paper";
 import styles from "../config/styles";
 import { TransacaoRepository } from "../repository/TransacaoRepository";
 
-export default function AdicionarEntrada() {
+export default function AdicionarEntrada({navigation}) {
     const [valor, setValor] = useState({
         quantia: "",
         categoria: "",
@@ -47,14 +47,13 @@ export default function AdicionarEntrada() {
             />
             <Button style={styles.button}
                   onPress={async () => {
-                    await repository.saveEntrada(valor);
-                    navigation.navigate("TabNavigator")
+                    await repository.saveEntrada(valor).then(navigation.navigate("HomeScreen"));                    
                 }}>
                 Salvar
             </Button>
             <Button 
             style={styles.button}
-               onPress={() => navigation.navigate("TabNavigator")}>
+               onPress={() => navigation.navigate("HomeScreen")}>
                 Cancelar
             </Button>
             

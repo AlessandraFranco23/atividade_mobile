@@ -31,7 +31,7 @@ export default function RegistroScreen({ navigation }) {
     <View style={styles.container}>
       <View style={styles.innerContainer}>
         <Image
-          source={require("../../assets/icon.png")}
+          source={require("../../assets/app_financas.jpg")}
           style={{ width: 200, height: 200, alignSelf: "center" }}
         />
         <Text variant="headlineLarge" style={styles.selfCenter}>

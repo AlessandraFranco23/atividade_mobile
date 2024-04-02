@@ -5,7 +5,7 @@ import styles from "../config/styles";
 import { TransacaoRepository } from "../repository/TransacaoRepository";
 
 
-export default function AdicionarDespesa() {
+export default function AdicionarDespesa({navigation}) {
     const [valor, setValor] = useState({
         quantia: "",
         categoria: "",
@@ -49,14 +49,14 @@ export default function AdicionarDespesa() {
             />
             <Button style={styles.button}
                 onPress={async () => {
-                    repository.saveDespesa(valor);
-                    navigation.navigate("TabNavigator")
+                    repository.saveDespesa(valor).then(navigation.navigate("HomeScreen"));
+                    
                 }}>
                 Salvar
             </Button>
             <Button
                 style={styles.button}
-                onPress={() => navigation.navigate("TabNavigator")}>
+                onPress={() => navigation.navigate("HomeScreen")}>
                 Cancelar
             </Button>
 
